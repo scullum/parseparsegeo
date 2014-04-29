@@ -14,7 +14,7 @@ csv()
     .transform(function(row) {
         var data = row;
         data.location = {
-            "__type": "GeoPoint",
+            '__type': 'GeoPoint',
             latitude: Number(row.latitude),
             longitude: Number(row.longitude)
         };
