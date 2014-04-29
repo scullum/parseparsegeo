@@ -5,7 +5,7 @@ var data = {};
 var stores = [];
 
 csv()
-    .from.path(__dirname + '/query_result.csv', {
+    .from.path(__dirname + '/' + process.argv[2], {
         delimiter: ',',
         escape: '"',
         columns: true,
@@ -32,7 +32,7 @@ csv()
         data.results = stores;
 
         var fs = require('fs');
-        fs.writeFile(__dirname + '/StoreLocator.json', JSON.stringify(data), function(err) {
+        fs.writeFile(__dirname + '/import.json', JSON.stringify(data), function(err) {
             if (err) {
                 console.log(err);
             } else {
