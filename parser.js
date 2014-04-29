@@ -2,7 +2,7 @@ var fs = require('fs');
 var csv = require('csv');
 
 var data = {};
-var stores = [];
+var places = [];
 
 csv()
     .from.path(__dirname + '/' + process.argv[2], {
@@ -25,11 +25,11 @@ csv()
 
     })
     .on('record', function(row, index) {
-        stores[index] = row;
+        places[index] = row;
     })
     .on('end', function() {
 
-        data.results = stores;
+        data.results = places;
 
         var fs = require('fs');
         fs.writeFile(__dirname + '/import.json', JSON.stringify(data), function(err) {
@@ -41,7 +41,7 @@ csv()
         });
     })
     .on('close', function(count) {
-        console.log('Number of stores: ' + count);
+        console.log('Number of places: ' + count);
     })
     .on('error', function(error) {
         console.log(error.message);
