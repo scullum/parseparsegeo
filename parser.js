@@ -31,8 +31,8 @@ csv()
 
         data.results = places;
 
-        var fs = require('fs');
-        fs.writeFile(__dirname + '/import.json', JSON.stringify(data), function(err) {
+
+        fs.writeFile(__dirname + '/output/import-' + Date.now() + '.json', JSON.stringify(data), function(err) {
             if (err) {
                 console.log(err);
             } else {
