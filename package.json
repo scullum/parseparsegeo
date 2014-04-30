@@ -2,7 +2,9 @@
     "name": "parseparsegeo",
     "version": "0.1.0",
     "description": "",
-    "scripts": {},
+    "scripts": {
+        "test": "vows test/*"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/scullum/parseparsegeo.git"
@@ -14,7 +16,8 @@
     },
     "homepage": "https://github.com/scullum/parseparsegeo",
     "dependencies": {
-        "csv": "^0.3.7"
+        "csv": "^0.3.7",
+        "vows": "^0.7.0"
     },
     "engines": {
         "node": ">=0.10.0"
