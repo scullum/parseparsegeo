@@ -12,16 +12,16 @@ csv()
         header: true
     })
     .transform(function(row) {
-        var data = row;
-        data.location = {
+
+        row.location = {
             '__type': 'GeoPoint',
             latitude: Number(row.latitude),
             longitude: Number(row.longitude)
         };
-        delete data.latitude;
-        delete data.longitude;
-        data.zipcode = Number(row.zipcode)
-        return data;
+        delete row.latitude;
+        delete row.longitude;
+        row.zipcode = Number(row.zipcode)
+        return row;
 
     })
     .on('record', function(row, index) {
