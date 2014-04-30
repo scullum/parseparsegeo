@@ -12,7 +12,6 @@ csv()
         header: true
     })
     .transform(function(row) {
-
         row.location = {
             '__type': 'GeoPoint',
             latitude: Number(row.latitude),
@@ -30,7 +29,6 @@ csv()
     .on('end', function() {
 
         data.results = places;
-
 
         fs.writeFile(__dirname + '/output/import-' + Date.now() + '.json', JSON.stringify(data), function(err) {
             if (err) {
