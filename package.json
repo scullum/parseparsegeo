@@ -1,23 +1,18 @@
 {
     "name": "parseparsegeo",
     "version": "0.1.0",
-    "description": "",
-    "scripts": {
-        "test": "vows test/*"
-    },
+    "description": "A utility for converting distinct lat/lon columns from CSV to Parse.com accepted GeoPoint objects.",
     "repository": {
         "type": "git",
         "url": "https://github.com/scullum/parseparsegeo.git"
     },
     "author": "scullum",
-    "license": "ISC",
     "bugs": {
         "url": "https://github.com/scullum/parseparsegeo/issues"
     },
     "homepage": "https://github.com/scullum/parseparsegeo",
     "dependencies": {
-        "csv": "^0.3.7",
-        "vows": "^0.7.0"
+        "csv": "^0.3.7"
     },
     "engines": {
         "node": ">=0.10.0"
