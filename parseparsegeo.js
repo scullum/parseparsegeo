@@ -19,7 +19,7 @@ csv()
         };
         delete row.latitude;
         delete row.longitude;
-        row.zipcode = Number(row.zipcode)
+        row.zipcode = Number(row.zipcode);
         return row;
 
     })
@@ -30,9 +30,10 @@ csv()
 
         data.results = places;
 
-        fs.writeFile(__dirname + '/output/import-' + Date.now() + '.json', JSON.stringify(data), function(err) {
+        fs.writeFile('./output/import-' + Date.now() + '.json', JSON.stringify(data), function(err) {
             if (err) {
                 console.log(err);
+                return;
             } else {
                 console.log("The file was saved!");
             }
@@ -41,6 +42,6 @@ csv()
     .on('close', function(count) {
         console.log('Number of places: ' + count);
     })
-    .on('error', function(error) {
-        console.log(error.message);
+    .on('error', function(err) {
+        console.log(err.message);
     });
